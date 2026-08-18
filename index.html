@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Process - Move your limits</title>
+    <!-- Načítanie Tailwind CSS pre rýchly dizajn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navigácia s mobilným menu -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-black text-2xl tracking-tighter text-blue-700">ACTIVE PROCESS</a>
+            
+            <!-- Menu pre veľké obrazovky (notebooky) -->
+            <div class="hidden md:flex space-x-6 font-semibold">
+                <a href="#podujatia" class="hover:text-blue-600 transition">Podujatia</a>
+                <a href="#o-nas" class="hover:text-blue-600 transition">Čo robíme</a>
+                <a href="#kontakt" class="hover:text-blue-600 transition">Kontakt</a>
+            </div>
+
+            <!-- Hamburger tlačidlo pre mobily -->
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Rozbaľovacie menu pre mobily (predvolene skryté) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t mt-4 pb-4">
+            <a href="#podujatia" class="block py-2 px-4 font-semibold hover:bg-gray-200">Podujatia</a>
+            <a href="#o-nas" class="block py-2 px-4 font-semibold hover:bg-gray-200">Čo robíme</a>
+            <a href="#kontakt" class="block py-2 px-4 font-semibold hover:bg-gray-200">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Hlavný banner (Hero) -->
+    <header class="bg-slate-900 text-white py-32 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-wide">Active Process</h1>
+        <p class="text-xl md:text-2xl font-light italic mb-10 text-gray-400">- move your limits -</p>
+        <a href="#podujatia" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded transition duration-300">
+            Pozrieť podujatia 2026
+        </a>
+    </header>
+
+    <!-- Sekcia Podujatia -->
+    <section id="podujatia" class="py-20 max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-black text-center mb-12 uppercase">Podujatia 2026</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Podujatie 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-blue-600 hover:shadow-md transition">
+                <h3 class="font-bold text-xl mb-1">Považský MTB Špeciál</h3>
+                <p class="text-sm font-semibold text-blue-600 mb-4">4. ročník | 30. máj 2026</p>
+                <p class="text-gray-600 mb-6 text-sm">Horská cyklistika pre všetky vekové kategórie.</p>
+                <!-- Tu je zatiaľ mŕtvy odkaz, neskôr sa zmení na napr. mtbspecial.html -->
+                <a href="#pripravujeme" class="text-blue-700 font-bold hover:underline">Viac info &rarr;</a>
+            </div>
+            <!-- Podujatie 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-green-500 hover:shadow-md transition">
+                <h3 class="font-bold text-xl mb-1">Považský CYKLOšpeciálik</h3>
+                <p class="text-sm font-semibold text-green-500 mb-4">31. máj 2026</p>
+                <p class="text-gray-600 mb-6 text-sm">Detské preteky priamo v centre mesta.</p>
+                <!-- Tu je zatiaľ mŕtvy odkaz, neskôr sa zmení na napr. cyklospecialik.html -->
+                <a href="#pripravujeme" class="text-green-600 font-bold hover:underline">Viac info &rarr;</a>
+            </div>
+            <!-- Podujatie 3 (TOTO SME ZMENILI) -->
+            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-red-600 hover:shadow-md transition">
+                <h3 class="font-bold text-xl mb-1">Manínsky Partizán</h3>
+                <p class="text-sm font-semibold text-red-600 mb-4">3. ročník | 6. september 2026</p>
+                <p class="text-gray-600 mb-6 text-sm">Online registrácia otvorená do 4. septembra.</p>
+                <!-- Odkaz presne smeruje na nový súbor partizan.html -->
+                <a href="partizan.html" class="bg-red-600 text-white px-4 py-2 rounded font-bold hover:bg-red-700 transition block text-center">Propozície a registrácia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcia Čo robíme -->
+    <section id="o-nas" class="py-20 bg-gray-200">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black mb-12 uppercase">Naše hlavné aktivity</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-2">Organizovanie podujatí</h4>
+                    <p class="text-gray-600 text-sm">Sme aktívny organizátor pretekov v regióne Horného Považia.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-2">Rozvoj cyklistiky</h4>
+                    <p class="text-gray-600 text-sm">Vytvárame podmienky pre rast cyklistickej komunity.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-2">Rozvoj turistiky</h4>
+                    <p class="text-gray-600 text-sm">Motivujeme ľudí k pohybu a spoznávaniu okolia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pätička -->
+    <footer id="kontakt" class="bg-slate-900 text-gray-400 py-8 text-center text-sm">
+        <p>&copy; 2026 Active Process o.z. | Všetky práva vyhradené.</p>
+    </footer>
+
+    <!-- Skript pre ovládanie mobilného menu -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
