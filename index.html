@@ -4,113 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Active Process - Move your limits</title>
-    <!-- Načítanie Tailwind CSS pre rýchly dizajn -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#02916D',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #02916D;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-white text-gray-800">
 
-    <!-- Navigácia s mobilným menu -->
-    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="font-black text-2xl tracking-tighter text-blue-700">ACTIVE PROCESS</a>
-            
-            <!-- Menu pre veľké obrazovky (notebooky) -->
-            <div class="hidden md:flex space-x-6 font-semibold">
-                <a href="#podujatia" class="hover:text-blue-600 transition">Podujatia</a>
-                <a href="#o-nas" class="hover:text-blue-600 transition">Čo robíme</a>
-                <a href="#kontakt" class="hover:text-blue-600 transition">Kontakt</a>
+    <nav class="bg-white shadow-sm p-4 sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
+            <a href="#" class="font-black text-xl tracking-tighter text-black flex items-center gap-2">ACTIVE PROCESS</a>
+            <div class="space-x-6 hidden md:flex font-bold text-sm uppercase tracking-wider text-gray-600">
+                <a href="#uvod" class="hover:text-brand transition">Úvod</a>
+                <a href="#podujatia" class="hover:text-brand transition">Nadchádzajúce</a>
+                <a href="#archiv" class="hover:text-brand transition">Udialo sa</a>
+                <a href="#o-nas" class="hover:text-brand transition">Čo robíme</a>
             </div>
-
-            <!-- Hamburger tlačidlo pre mobily -->
-            <button id="menu-btn" class="block md:hidden focus:outline-none">
-                <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Rozbaľovacie menu pre mobily (predvolene skryté) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t mt-4 pb-4">
-            <a href="#podujatia" class="block py-2 px-4 font-semibold hover:bg-gray-200">Podujatia</a>
-            <a href="#o-nas" class="block py-2 px-4 font-semibold hover:bg-gray-200">Čo robíme</a>
-            <a href="#kontakt" class="block py-2 px-4 font-semibold hover:bg-gray-200">Kontakt</a>
         </div>
     </nav>
 
-    <!-- Hlavný banner (Hero) -->
-    <header class="bg-slate-900 text-white py-32 text-center px-4">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-wide">Active Process</h1>
-        <p class="text-xl md:text-2xl font-light italic mb-10 text-gray-400">- move your limits -</p>
-        <a href="#podujatia" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded transition duration-300">
-            Pozrieť podujatia 2026
-        </a>
+    <header id="uvod" class="bg-black text-white py-24 md:py-32 text-center px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 uppercase tracking-tight text-brand">Active Process</h1>
+            <p class="text-xl md:text-2xl font-light italic mb-8 text-gray-300">- move your limits -</p>
+        </div>
     </header>
 
-    <!-- Sekcia Podujatia -->
-    <section id="podujatia" class="py-20 max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-black text-center mb-12 uppercase">Podujatia 2026</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Podujatie 1 -->
-            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-blue-600 hover:shadow-md transition">
-                <h3 class="font-bold text-xl mb-1">Považský MTB Špeciál</h3>
-                <p class="text-sm font-semibold text-blue-600 mb-4">4. ročník | 30. máj 2026</p>
-                <p class="text-gray-600 mb-6 text-sm">Horská cyklistika pre všetky vekové kategórie.</p>
-                <!-- Tu je zatiaľ mŕtvy odkaz, neskôr sa zmení na napr. mtbspecial.html -->
-                <a href="#pripravujeme" class="text-blue-700 font-bold hover:underline">Viac info &rarr;</a>
-            </div>
-            <!-- Podujatie 2 -->
-            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-green-500 hover:shadow-md transition">
-                <h3 class="font-bold text-xl mb-1">Považský CYKLOšpeciálik</h3>
-                <p class="text-sm font-semibold text-green-500 mb-4">31. máj 2026</p>
-                <p class="text-gray-600 mb-6 text-sm">Detské preteky priamo v centre mesta.</p>
-                <!-- Tu je zatiaľ mŕtvy odkaz, neskôr sa zmení na napr. cyklospecialik.html -->
-                <a href="#pripravujeme" class="text-green-600 font-bold hover:underline">Viac info &rarr;</a>
-            </div>
-            <!-- Podujatie 3 (TOTO SME ZMENILI) -->
-            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-red-600 hover:shadow-md transition">
-                <h3 class="font-bold text-xl mb-1">Manínsky Partizán</h3>
-                <p class="text-sm font-semibold text-red-600 mb-4">3. ročník | 6. september 2026</p>
-                <p class="text-gray-600 mb-6 text-sm">Online registrácia otvorená do 4. septembra.</p>
-                <!-- Odkaz presne smeruje na nový súbor partizan.html -->
-                <a href="partizan.html" class="bg-red-600 text-white px-4 py-2 rounded font-bold hover:bg-red-700 transition block text-center">Propozície a registrácia</a>
+    <!-- NADCHÁDZAJÚCE PODUJATIA (Dlaždice) -->
+    <section id="podujatia" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-black uppercase text-brand mb-2">Nadchádzajúce</h2>
+            <div class="w-16 h-1 bg-brand mx-auto"></div>
+        </div>
+        <!-- GRID PRE DLAŽDICE: 2 stĺpce mobil, 3 tablet, 5 monitor -->
+        <div id="aktualne-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+            <div class="col-span-full text-center text-gray-500 py-10">
+                <div class="loader mb-4"></div>
+                Načítavam dáta z tabuľky...
             </div>
         </div>
     </section>
 
-    <!-- Sekcia Čo robíme -->
-    <section id="o-nas" class="py-20 bg-gray-200">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-black mb-12 uppercase">Naše hlavné aktivity</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h4 class="font-bold text-lg mb-2">Organizovanie podujatí</h4>
-                    <p class="text-gray-600 text-sm">Sme aktívny organizátor pretekov v regióne Horného Považia.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-2">Rozvoj cyklistiky</h4>
-                    <p class="text-gray-600 text-sm">Vytvárame podmienky pre rast cyklistickej komunity.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-2">Rozvoj turistiky</h4>
-                    <p class="text-gray-600 text-sm">Motivujeme ľudí k pohybu a spoznávaniu okolia.</p>
+    <!-- UDIALO SA (Dlaždice) -->
+    <section id="archiv" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black uppercase text-gray-800 mb-2">Udialo sa</h2>
+                <div class="w-16 h-1 bg-gray-400 mx-auto"></div>
+            </div>
+            <!-- GRID PRE DLAŽDICE -->
+            <div id="archiv-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+                <div class="col-span-full text-center text-gray-500 py-10">
+                    <div class="loader mb-4"></div>
+                    Načítavam históriu...
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pätička -->
-    <footer id="kontakt" class="bg-slate-900 text-gray-400 py-8 text-center text-sm">
-        <p>&copy; 2026 Active Process o.z. | Všetky práva vyhradené.</p>
+    <section id="o-nas" class="py-24 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black uppercase text-brand mb-2">Čo robíme</h2>
+                <div class="w-16 h-1 bg-brand mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-4xl mb-4">⏱️</div>
+                    <h4 class="font-black text-xl mb-2 uppercase text-brand">Organizovanie</h4>
+                    <p class="text-gray-400 text-sm">športových podujatí a pretekov v regióne Horného Považia.</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">🚴</div>
+                    <h4 class="font-black text-xl mb-2 uppercase text-brand">Podpora a rozvoj</h4>
+                    <p class="text-gray-400 text-sm">cyklistiky.</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">⛰</div>
+                    <h4 class="font-black text-xl mb-2 uppercase text-brand">Podpora a rozvoj</h4>
+                    <p class="text-gray-400 text-sm">turistiky.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontakt" class="bg-gray-900 text-white py-8 text-center text-xs border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <p class="font-bold text-base tracking-tighter mb-2 md:mb-0 text-brand">ACTIVE PROCESS</p>
+            <p class="text-gray-500">&copy; 2026 Active Process o.z. | Všetky práva vyhradené.</p>
+        </div>
     </footer>
 
-    <!-- Skript pre ovládanie mobilného menu -->
     <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
+        window.google = {
+            visualization: {
+                Query: {
+                    setResponse: function(data) {
+                        spracujData(data);
+                    }
+                }
+            }
+        };
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        function spracujData(json) {
+            let aktualneHTML = '';
+            let archivHTML = '';
+
+            try {
+                if (json.status === 'error') throw new Error(json.errors[0].message);
+
+                const riadky = json.table.rows;
+                const stlpce = json.table.cols;
+                
+                let cols = { nazov: 0, rocnik: 1, datum: 2, popis: 3, link: 4, status: 5, logo: -1 };
+                
+                if (stlpce) {
+                    for (let j = 0; j < stlpce.length; j++) {
+                        if (stlpce[j] && stlpce[j].label) {
+                            let text = stlpce[j].label.toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+                            if (text.includes('nazov')) cols.nazov = j;
+                            if (text.includes('rocnik')) cols.rocnik = j;
+                            if (text.includes('datum')) cols.datum = j;
+                            if (text.includes('popis')) cols.popis = j;
+                            if (text.includes('link')) cols.link = j;
+                            if (text.includes('status')) cols.status = j;
+                            if (text.includes('logo')) cols.logo = j;
+                        }
+                    }
+                }
+
+                const getVal = (bunky, idx) => {
+                    if (idx === -1 || !bunky || !bunky[idx] || bunky[idx].v === null || bunky[idx].v === undefined) return '';
+                    return bunky[idx].v.toString().trim();
+                };
+
+                for (let i = 0; i < riadky.length; i++) {
+                    const bunky = riadky[i].c;
+                    if (!bunky) continue;
+
+                    const nazov = getVal(bunky, cols.nazov);
+                    const rocnik = getVal(bunky, cols.rocnik);
+                    let datum = getVal(bunky, cols.datum);
+                    let odkaz = getVal(bunky, cols.link) || '#';
+                    
+                    let logo = getVal(bunky, cols.logo);
+                    if (!logo) logo = 'https://placehold.co/400x300/eeeeee/999999?text=Active+Process';
+
+                    const statusText = getVal(bunky, cols.status).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                    if (!nazov || nazov.toLowerCase() === 'nazov') continue;
+
+                    if (datum.startsWith('Date')) {
+                        const m = datum.match(/Date\((\d+),(\d+),(\d+)\)/);
+                        if (m) datum = `${m[3]}. ${parseInt(m[2]) + 1}. ${m[1]}`;
+                    }
+
+                    if (statusText.includes('aktualn')) {
+                        aktualneHTML += `
+                            <div class="bg-white border border-gray-200 hover:shadow-lg transition flex flex-col overflow-hidden group rounded-lg">
+                                <div class="h-28 sm:h-32 overflow-hidden relative bg-gray-100">
+                                    <img src="${logo}" alt="${nazov}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/eeeeee/999999?text=Nedostupné'">
+                                    <div class="absolute top-2 right-2 bg-brand text-white text-[9px] font-bold px-2 py-0.5 uppercase rounded shadow">Zápis</div>
+                                </div>
+                                <div class="p-3 flex flex-col flex-grow justify-between text-center">
+                                    <div>
+                                        <h3 class="font-black text-sm mb-1 text-black group-hover:text-brand transition leading-tight line-clamp-2">${nazov}</h3>
+                                        <p class="text-[10px] font-bold text-gray-500 mb-2 uppercase tracking-wider">${rocnik ? rocnik + '<br>' : ''}${datum}</p>
+                                    </div>
+                                    <div class="mt-2">
+                                        <a href="${odkaz}" target="_blank" class="block bg-brand text-white px-2 py-2 font-bold uppercase text-[10px] hover:bg-green-700 transition w-full rounded">Info / Reg</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    } else if (statusText.includes('archiv')) {
+                        archivHTML += `
+                            <div class="bg-white border border-gray-200 hover:shadow-lg transition flex flex-col overflow-hidden group opacity-90 hover:opacity-100 rounded-lg">
+                                <div class="h-28 sm:h-32 overflow-hidden relative bg-gray-200 grayscale group-hover:grayscale-0 transition duration-500">
+                                    <img src="${logo}" alt="${nazov}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/eeeeee/999999?text=Archív'">
+                                </div>
+                                <div class="p-3 flex flex-col flex-grow justify-between text-center">
+                                    <div>
+                                        <h3 class="font-black text-sm mb-1 text-black leading-tight line-clamp-2">${nazov}</h3>
+                                        <p class="text-[10px] font-bold text-gray-500 mb-2 uppercase tracking-wider">${rocnik ? rocnik + '<br>' : ''}${datum}</p>
+                                    </div>
+                                    <div class="mt-2">
+                                        <a href="${odkaz}" target="_blank" class="block bg-gray-100 text-gray-700 border border-gray-200 px-2 py-2 font-bold uppercase text-[10px] hover:bg-gray-200 transition w-full rounded">Výsledky</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+
+                document.getElementById('aktualne-container').innerHTML = aktualneHTML || '<div class="col-span-full text-center py-10 text-gray-500">Momentálne neplánujeme žiadne podujatia.</div>';
+                document.getElementById('archiv-container').innerHTML = archivHTML || '<div class="col-span-full text-center py-10 text-gray-500">Zatiaľ sa nič neudialo.</div>';
+
+            } catch (chyba) {
+                document.getElementById('aktualne-container').innerHTML = `<div class="col-span-full text-center text-red-500 font-bold py-10">Chyba: ${chyba.message}</div>`;
+            }
+        }
+
+        const query = encodeURIComponent('select *');
+        const skript = document.createElement('script');
+        skript.src = `https://docs.google.com/spreadsheets/d/1Yo7MymTiWtAZuS9ffKehWjQTzyaZsEmJiRvGSXzI7iI/gviz/tq?tqx=out:json;responseHandler:spracujData&headers=1&tq=${query}&_cache=${Math.random()}`;
+        document.body.appendChild(skript);
     </script>
 </body>
 </html>
